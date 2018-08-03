@@ -18,7 +18,12 @@ const makeRequest = function(url, callback) {
 };
 
 var requestComplete = function(){
-  console.log("Whoot!");
+  if(this.status !== 200) return;
+  var jsonString = this.responseText;
+  var carParks = JSON.parse(jsonString);
+  var carPark = carParks[0];
+  console.log(carParks);
+
 }
 
 
