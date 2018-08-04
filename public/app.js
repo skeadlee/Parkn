@@ -27,8 +27,10 @@ var requestComplete = function(){
   if(this.status !== 200) return;
   var jsonString = this.responseText;
   var carParks = JSON.parse(jsonString);
-  var carPark = carParks[0];
   console.log(carParks);
+  //dig down in to JSON to get to carParkName
+  var carParkName = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$carParkIdentity;
+  console.log(carParkName);
 
 }
 
