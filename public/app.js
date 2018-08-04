@@ -29,8 +29,14 @@ var requestComplete = function(){
   var carParks = JSON.parse(jsonString);
   console.log(carParks);
   //dig down in to JSON to get to carParkName
-  var carParkName = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$carParkIdentity;
+  var carParkName = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$carParkIdentity
+  //dig down for carParkLat coords
+  var carParkLat = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$groupOfLocations.d2lm$locationContainedInGroup.d2lm$pointByCoordinates.d2lm$pointCoordinates.d2lm$latitude;
+  //dig down for carParkLng coords
+  var carParkLng = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$groupOfLocations.d2lm$locationContainedInGroup.d2lm$pointByCoordinates.d2lm$pointCoordinates.d2lm$longitude;
   console.log(carParkName);
+  console.log(carParkLat);
+  console.log(carParkLng);
 
 }
 
