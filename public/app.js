@@ -29,14 +29,28 @@ var requestComplete = function(){
   var carParks = JSON.parse(jsonString);
   console.log(carParks);
   //dig down in to JSON to get to carParkName
-  var carParkName = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$carParkIdentity
+  var carParkName = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$carParkIdentity;
   //dig down for carParkLat coords
   var carParkLat = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$groupOfLocations.d2lm$locationContainedInGroup.d2lm$pointByCoordinates.d2lm$pointCoordinates.d2lm$latitude;
   //dig down for carParkLng coords
   var carParkLng = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$groupOfLocations.d2lm$locationContainedInGroup.d2lm$pointByCoordinates.d2lm$pointCoordinates.d2lm$longitude;
+  //get down to the space availability data
+  var carParkIsFull = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$carParkStatus;
+  //get the total capacity of car park
+  var carParkCapacity = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$totalCapacity;
+  //get number of currently occupied spaces
+  var carParkOccupiedSpaces = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation[0].d2lm$situationRecord.d2lm$occupiedSpaces
+  //calculate current number of spaces available
+  var carParkSpacesAvailable = carParkCapacity - carParkOccupiedSpaces;
+
+
   console.log(carParkName);
   console.log(carParkLat);
   console.log(carParkLng);
+  console.log(carParkIsFull);
+  console.log(carParkCapacity);
+  console.log(carParkOccupiedSpaces);
+  console.log(carParkSpacesAvailable);
 
 }
 
