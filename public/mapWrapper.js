@@ -11,7 +11,23 @@ MapWrapper.prototype.addPersonMarker = function(coords){
 };
 
 //adds marker to each carPark
-MapWrapper.prototype.addCarParkMarker = function(coords, name, isFull, spacesAvailable){
-  var popupContent = `${name}, ${spacesAvailable}`;
+MapWrapper.prototype.addCarParkMarker = function(coords, name, isFull, spacesAvailable, canShowSpacesAvailable){
+  var carParkIsFullMsg = "";
+  if(isFull === "enoughSpacesAvailable"){
+    carParkIsFullMsg = "Spaces";
+  } else {
+    carParkIsFullMsg = "No Spaces";
+  };
+
+  //some car parks begin with -999 spaces occupied spaces
+  //which causes a 'mare!.
+  //in this case, don't show number of spaces currently spacesAvailable
+  var popupContent = "";
+  if(canShowSpacesAvailable){
+    popupContent = `${name}, ${spacesAvailable}, ${carParkIsFullMsg}`;
+  } else {
+    popupContent = `${name}, ${carParkIsFullMsg}`;
+  };
+
   L.marker(coords).bindPopup(popupContent).addTo(this.map);
 };

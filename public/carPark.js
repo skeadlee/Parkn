@@ -4,6 +4,7 @@ const CarPark = function(name, lat, lng, isFull, capacity, occupiedSpaces){
   this.isFull = isFull;
   this.capacity = capacity;
   this.occupiedSpaces = occupiedSpaces;
+  this.canShowSpacesAvailable = occupiedSpaces >= 0;
   this.spacesAvailable = capacity - occupiedSpaces;
 };
 
