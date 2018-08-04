@@ -8,6 +8,12 @@ const app = function(){
   const zoom = 14;
   const mainMap = new MapWrapper(coords, zoom);
 
+  navigator.geolocation.getCurrentPosition(function(position){
+    mainMap.addPersonMarker([position.coords.latitude, position.coords.longitude]);
+  });
+
+
+
 };
 
 const makeRequest = function(url, callback) {
