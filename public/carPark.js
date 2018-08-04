@@ -1,7 +1,6 @@
 const CarPark = function(name, lat, lng, isFull, capacity, occupiedSpaces){
   this.name = name;
-  this.lat = lat;
-  this.lng = lng;
+  this.coords = [lat,lng];
   this.isFull = isFull;
   this.capacity = capacity;
   this.occupiedSpaces = occupiedSpaces;
@@ -21,8 +20,7 @@ CarPark.getCarParksFromJson = function(jsonString){
 
 
     console.log(carParkFromSituation.name);
-    console.log(carParkFromSituation.lat);
-    console.log(carParkFromSituation.lng);
+    console.log(carParkFromSituation.coords);
     console.log(carParkFromSituation.isFull);
     console.log(carParkFromSituation.capacity);
     console.log(carParkFromSituation.occupiedSpaces);

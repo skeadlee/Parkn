@@ -1,8 +1,4 @@
-const app = function(){
-
-  var url = 'https://gcc.azure-api.net/traffic/carparks?format=json';
-  makeRequest(url, requestComplete);
-
+const setUpMap = function(){
   //sets view of map to Glasgow City Centre.
   const coords = [55.860773, -4.245175];
   const zoom = 14;
@@ -11,9 +7,7 @@ const app = function(){
   navigator.geolocation.getCurrentPosition(function(position){
     mainMap.addPersonMarker([position.coords.latitude, position.coords.longitude]);
   });
-
-
-
+  return mainMap;
 };
 
 const makeRequest = function(url, callback) {
@@ -23,13 +17,27 @@ const makeRequest = function(url, callback) {
   request.send();
 };
 
-var requestComplete = function(){
+const requestComplete = function(){
   if(this.status !== 200) return;
   var jsonString = this.responseText;
+
+  mainMap = setUpMap();
+
   var carParks = CarPark.getCarParksFromJson(jsonString);
+
+  for(item of carParks){
+    mainMap.addCarParkMarker(item.coords, item.name, item.isFull, item.spacesAvailable);
+  };
+
 };
 
 
+
+const app = function(){
+
+  var url = 'https://gcc.azure-api.net/traffic/carparks?format=json';
+  makeRequest(url, requestComplete);
+};
 
 
 window.addEventListener("DOMContentLoaded", app);
