@@ -24,15 +24,17 @@ const requestComplete = function(){
   mainMap = setUpMap();
 
   var carParks = CarPark.getCarParksFromJson(jsonString);
-
   for(item of carParks){
     mainMap.addCarParkMarker(item.coords, item.name, item.isFull, item.spacesAvailable, item.canShowSpacesAvailable);
   };
+
+  ChartCapacity.displayCapacityChart(carParks);
 };
 
 
 
 const app = function(){
+  google.charts.load("current", {packages:["corechart"]});
 
   var url = 'https://gcc.azure-api.net/traffic/carparks?format=json';
   makeRequest(url, requestComplete);
