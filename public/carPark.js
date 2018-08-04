@@ -9,12 +9,16 @@ const CarPark = function(name, lat, lng, isFull, capacity, occupiedSpaces){
 };
 
 CarPark.getCarParksFromJson = function(jsonString){
-  var carParks = JSON.parse(jsonString);
+  var carParksJson = JSON.parse(jsonString);
   //get the situations(car parks) array from the json object
-  var situations = carParks.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation
-  //loop through the situations array to create carPark objects 
+  var situations = carParksJson.d2lm$d2LogicalModel.d2lm$payloadPublication.d2lm$situation
+  //creates new empty array to store carPark objects
+  var carParks = [];
+  //loop through the situations array to create carPark objects
   for(item of situations){
     var carParkFromSituation = this.getCarParkFromSituation(item);
+    carParks.push(carParkFromSituation);
+
 
     console.log(carParkFromSituation.name);
     console.log(carParkFromSituation.lat);
@@ -26,14 +30,7 @@ CarPark.getCarParksFromJson = function(jsonString){
 
 
   };
-
-
-
-
-
-
-
-
+  return carParks;
 };
 
 CarPark.getCarParkFromSituation = function(situation){

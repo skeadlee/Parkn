@@ -26,7 +26,7 @@ const makeRequest = function(url, callback) {
 var requestComplete = function(){
   if(this.status !== 200) return;
   var jsonString = this.responseText;
-  CarPark.getCarParksFromJson(jsonString);
+  var carParks = CarPark.getCarParksFromJson(jsonString);
 };
 
 
