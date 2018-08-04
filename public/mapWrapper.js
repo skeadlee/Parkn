@@ -22,11 +22,13 @@ MapWrapper.prototype.addCarParkMarker = function(coords, name, isFull, spacesAva
   //some car parks begin with -999 spaces occupied spaces
   //which causes a 'mare!.
   //in this case, don't show number of spaces currently spacesAvailable
+
+  //using .slice string method to remove the Id from the end of the carPark name.
   var popupContent = "";
   if(canShowSpacesAvailable){
-    popupContent = `${name}, ${spacesAvailable}, ${carParkIsFullMsg}`;
+    popupContent = `${name.slice(0, -7)}, ${spacesAvailable}, ${carParkIsFullMsg}`;
   } else {
-    popupContent = `${name}, ${carParkIsFullMsg}`;
+    popupContent = `${name.slice(0, -7)}, ${carParkIsFullMsg}`;
   };
 
   L.marker(coords).bindPopup(popupContent).addTo(this.map);

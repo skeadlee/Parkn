@@ -19,7 +19,6 @@ CarPark.getCarParksFromJson = function(jsonString){
     var carParkFromSituation = this.getCarParkFromSituation(item);
     carParks.push(carParkFromSituation);
 
-
     console.log(carParkFromSituation.name);
     console.log(carParkFromSituation.coords);
     console.log(carParkFromSituation.isFull);
