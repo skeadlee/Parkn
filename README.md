@@ -1,3 +1,9 @@
+My plan for this project is to have a map centred over Glasgow City centre, which adds a marker to the users current location, and using the Live Car Park Data from the Glasgow Open Data API, have markers at each of the car parks, displaying whether or not there are spaces available, and where possible, also display the number of spaces available.
+
+In addition to this, I would like to calculate the distances from the users location to each of the car parks.
+Another feature I would like to add is changing the colour of the car park marker when it is full.
+
+
 # Weekend homework.
 
 ## Key learning to practise and/or revise:
