@@ -3,7 +3,7 @@ My plan for this project is to have a map centred over Glasgow City centre, whic
 In addition to this, I would like to calculate the distances from the users location to each of the car parks.
 Another feature I would like to add is changing the colour of the car park marker when it is full.
 
-(Got a 403 Quota Exceeded, unable to continue work on this at the moment).
+(Got a 403 - Quota Exceeded, unable to continue work on this at the moment).
 
 
 # Weekend homework.
