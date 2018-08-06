@@ -33,3 +33,5 @@ MapWrapper.prototype.addCarParkMarker = function(coords, name, isFull, spacesAva
 
   L.marker(coords).bindPopup(popupContent).addTo(this.map);
 };
+
+//maybe add "car park closed" as an alt message when isFull === carParkClosed?
