@@ -1,3 +1,5 @@
+[To run this, in #Terminal => npm init -y, npm start]
+
 My plan for this project is to have a map centred over Glasgow City centre, which adds a marker to the users current location, and using the Live Car Park Data from the Glasgow Open Data API, have markers at each of the car parks, displaying whether or not there are spaces available, and where possible, also display the number of spaces available.
 
 In addition to this, I would like to calculate the distances from the users location to each of the car parks.
