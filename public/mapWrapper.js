@@ -17,14 +17,6 @@ MapWrapper.prototype.addPersonMarker = function(coords){
   //L.marker(coords).bindPopup(`You are here!`).addTo(this.map);
 };
 
-
-
-
-
-
-
-
-
 //adds marker to each carPark
 MapWrapper.prototype.addCarParkMarker = function(coords, name, isFull, spacesAvailable, canShowSpacesAvailable){
   var carParkIsFullMsg = "";
@@ -45,9 +37,13 @@ MapWrapper.prototype.addCarParkMarker = function(coords, name, isFull, spacesAva
   } else {
     popupContent = `${name.slice(0, -7)}, ${carParkIsFullMsg}`;
   };
-  
 
-  L.marker(coords).bindPopup(popupContent).addTo(this.map);
+  var myCPIcon = L.icon({
+      iconUrl: 'placeholder.png',
+      iconSize: [40, 40]
+  });
+
+  L.marker(coords, {icon: myCPIcon}).bindPopup(popupContent).addTo(this.map);
 };
 
 //maybe add "car park closed" as an alt message when isFull === carParkClosed?
