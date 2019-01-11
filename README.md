@@ -4,6 +4,7 @@ My plan for this project is to have a map centred over Glasgow City centre, whic
 
 In addition to this, I would like to calculate the distances from the users location to each of the car parks.
 Another feature I would like to add is changing the colour of the car park marker when it is full.
+I also need to change the colour of the marker of the user so they can see where they are relative to the car parks.
 
 https://gcc.azure-api.net/traffic/carparks?format=json
 
