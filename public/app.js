@@ -27,8 +27,6 @@ const requestComplete = function(){
   for(item of carParks){
     mainMap.addCarParkMarker(item.coords, item.name, item.isFull, item.spacesAvailable, item.canShowSpacesAvailable);
   };
-
-  //ChartCapacity.displayCapacityChart(carParks);
 };
 
 
