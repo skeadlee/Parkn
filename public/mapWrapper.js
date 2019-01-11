@@ -7,8 +7,23 @@ const MapWrapper = function(coords, zoom){
 //adds marker to persons location
 //map stays centred over Glasgow CC as that's where all car parks are!
 MapWrapper.prototype.addPersonMarker = function(coords){
-  L.marker(coords).bindPopup(`You are here!`).addTo(this.map);
+  var myIcon = L.icon({
+      iconUrl: 'sports-car.png',
+      iconSize: [25, 25]
+  });
+  L.marker(coords, {icon: myIcon}).bindPopup(`You are here!`).addTo(this.map);
+
+
+  //L.marker(coords).bindPopup(`You are here!`).addTo(this.map);
 };
+
+
+
+
+
+
+
+
 
 //adds marker to each carPark
 MapWrapper.prototype.addCarParkMarker = function(coords, name, isFull, spacesAvailable, canShowSpacesAvailable){
