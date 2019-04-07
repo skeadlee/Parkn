@@ -12,9 +12,6 @@ MapWrapper.prototype.addPersonMarker = function(coords){
       iconSize: [40, 40]
   });
   L.marker(coords, {icon: myIcon}).bindPopup(`You are here!`).addTo(this.map);
-
-
-  //L.marker(coords).bindPopup(`You are here!`).addTo(this.map);
 };
 
 //adds marker to each carPark
@@ -25,7 +22,6 @@ MapWrapper.prototype.addCarParkMarker = function(coords, name, isFull, spacesAva
   } else {
     carParkIsFullMsg = "No Spaces";
   };
-
   //some car parks begin with -999 spaces occupied spaces
   //which causes a 'mare!.
   //in this case, don't show number of spaces currently spacesAvailable
@@ -38,12 +34,13 @@ MapWrapper.prototype.addCarParkMarker = function(coords, name, isFull, spacesAva
     popupContent = `${name.slice(0, -7)}, ${carParkIsFullMsg}`;
   };
 
+  // adds marker to carPark location
   var myCPIcon = L.icon({
       iconUrl: 'placeholder.png',
       iconSize: [40, 40]
   });
-
   L.marker(coords, {icon: myCPIcon}).bindPopup(popupContent).addTo(this.map);
+
 };
 
 //maybe add "car park closed" as an alt message when isFull === carParkClosed?

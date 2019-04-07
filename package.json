@@ -1,7 +1,7 @@
 {
   "name": "start_code",
   "version": "1.0.0",
-  "description": "",
+  "description": "[To run this, in #Terminal => npm init -y, npm start]",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,5 +12,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skeadlee/Parkn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skeadlee/Parkn/issues"
+  },
+  "homepage": "https://github.com/skeadlee/Parkn#readme"
 }

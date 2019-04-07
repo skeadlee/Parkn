@@ -29,14 +29,11 @@ const requestComplete = function(){
   };
 };
 
-
-
 const app = function(){
   google.charts.load("current", {packages:["corechart"]});
 
   var url = 'https://gcc.azure-api.net/traffic/carparks?format=json';
   makeRequest(url, requestComplete);
 };
-
 
 window.addEventListener("DOMContentLoaded", app);
